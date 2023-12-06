@@ -48,4 +48,4 @@ for i in range(len(Rm)):
     plt.xlabel("t [s]")
     plt.grid()
     plt.show()
-    #plt.savefig(f"C:/Users/marst/OneDrive/Skrivebord/UNI/S. 3/P.3/Plots_eks/{i}_eksperiment.png", dpi=500)
+    #plt.savefig(f"directory_/{i+1}", dpi=500)
