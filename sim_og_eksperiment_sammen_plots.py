@@ -99,7 +99,7 @@ T_s = 0.00667
 cut = [900,900,0,600,1200] #skal være lige tal
 
 for i in range(len(Rm)):
-    with open(f"C:/Users/marst/OneDrive/Skrivebord/UNI/S. 3/P.3/Marcus{i+1}.txt", 'r') as file:
+    with open(f"directory/data ({i+1}).txt", 'r') as file:
         for line in file:
             parts = line.split(',')
             for part in parts:
