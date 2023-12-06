@@ -170,7 +170,7 @@ plt.grid()
 plt.suptitle("", fontsize=16)
 plt.tight_layout()
 plt.show()
-#plt.savefig(f"C:/Users/marst/OneDrive/Skrivebord/UNI/S. 3/P.3/first_sim", dpi=500)
+#plt.savefig(f"directory", dpi=500)
 
 
 C = np.eye(4)
