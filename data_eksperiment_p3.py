@@ -31,7 +31,7 @@ for i in range(len(Rm)):
     #ang = data[L[i]+1+cut[i]:L[i+1]:2]
 
     t = np.array([i for i in range(len(data[L[i]+cut[i]:L[i]+cut[i]+18000:2]))])*T_s
-    pos = np.array(data[L[i]+cut[i]:L[i]+cut[i]+18000:2])
+    pos = np.array(data[L[i]+cut[i]:L[i]+cut[i]+18000:2])-(0.89/2)
     ang = data[L[i]+1+cut[i]:L[i]+cut[i]+18000:2]
 
     plt.subplot(1, 2, 1)
