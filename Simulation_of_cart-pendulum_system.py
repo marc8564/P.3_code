@@ -128,9 +128,9 @@ plt.subplot2grid((6,4), (0,2), colspan=2, rowspan=2)
 plt.locator_params(axis='x', nbins=5)
 plt.locator_params(axis='y', nbins=5)
 
-plt.plot(t, sim(S1, t, K)[2], label=r"$\theta_0 = 0.1$")
-plt.plot(t, sim(S2, t, K)[2], label=r"$\theta_0 = 0.5$")
-plt.plot(t, sim(S3, t, K)[2], label=r"$\theta_0 = 1.0$")
+plt.plot(t, sim(S1, t, K)[1], label=r"$\theta_0 = 0.1$")
+plt.plot(t, sim(S2, t, K)[1], label=r"$\theta_0 = 0.5$")
+plt.plot(t, sim(S3, t, K)[1], label=r"$\theta_0 = 1.0$")
 
 plt.xlabel("t [s]")
 plt.ylabel("$\dot{x}_c$ [m/s]")
