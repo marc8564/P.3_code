@@ -122,7 +122,7 @@ for i in range(len(Rm)):
     plt.axhline(xmax=30, xmin=0, y=0.445, c="black")
     plt.axhline(xmax=30, xmin=0, y=-0.445, c="black")
     plt.plot(t, sim(S1, t, KK[i])[0], label="Simulation")
-    plt.plot(np.array([i for i in range(len(data[L[i]+cut[i]:L[i+1]:2]))])*T_s, np.array(data[L[i]+cut[i]:L[i+1]:2]), label="Experiment")
+    plt.plot(np.array([i for i in range(len(data[L[i]+cut[i]:L[i+1]:2]))])*T_s, np.array(data[L[i]+cut[i]:L[i+1]:2])-(0.89/2), label="Experiment")
 
     plt.xlabel("t [s]")
     plt.ylabel("$x_c$ [m]")
