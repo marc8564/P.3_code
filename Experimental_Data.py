@@ -6,7 +6,7 @@ K = ["{707.10678119, -873.4060921, 344.75201939, -145.05769211}", "{707.10678119
 data = []
 L = [0]
 T_s = 0.00667
-cut = [900,900,0,600,1200] #skal være lige tal
+cut = [900,900,0,600,1200] # even number
 
 for i in range(len(Rm)):
     with open(f"directory/data ({i+1}).txt", 'r') as file:
@@ -22,13 +22,7 @@ for i in range(len(Rm)):
 
 
 for i in range(len(Rm)):
-    # i == 0 virker ikke rigtigt
     plt.figure(figsize=(12, 6))
-
-    #plt.suptitle(f"R = {Rm[i]}, K = {K[i]}", fontsize=10)
-    #t = np.array([i for i in range(len(data[L[i]+cut[i]:L[i+1]:2]))])*T_s
-    #pos = np.array(data[L[i]+cut[i]:L[i+1]:2])-(0.89/2)
-    #ang = data[L[i]+1+cut[i]:L[i+1]:2]
 
     t = np.array([i for i in range(len(data[L[i]+cut[i]:L[i]+cut[i]+18000:2]))])*T_s
     pos = np.array(data[L[i]+cut[i]:L[i]+cut[i]+18000:2])-(0.89/2)
