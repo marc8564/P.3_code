@@ -33,7 +33,7 @@ def ode1(S,K):
     dz1dt = z2
     dz2dt = (-a_c*z2 + u - m_p * l * np.sin(z3) * z4**2 + m_p * g * np.cos(z3) * np.sin(z3) - a_p * z4 / l) * np.cos(z3) / (m_c + m_p - m_p * np.cos(z3)**2)
     dz3dt = z4
-    dz4dt = (g/l) * np.sin(z3) + (-a_p * z4) / (m_p * l**2) + (np.cos(z3) * (-a_c * z2 + u - m_p * l * np.sin(z3) * z4**2 + m_p * g * np.cos(z3) * np.sin(z3) + (-a_p * z4) / l) / (l * (m_c - m_p - m_p * np.cos(z3)**2)))
+    dz4dt = (g/l) * np.sin(z3) + (-a_p * z4) / (m_p * l**2) + (np.cos(z3) * (-a_c * z2 + u - m_p * l * np.sin(z3) * z4**2 + m_p * g * np.cos(z3) * np.sin(z3) + (-a_p * z4) / l) / (l * (m_c + m_p - m_p * np.cos(z3)**2)))
 
     return np.array([dz1dt, dz2dt[0], dz3dt, dz4dt[0]])
 
