@@ -3,14 +3,14 @@ import matplotlib.pyplot as plt
 import control as ctrl
 from matplotlib import gridspec
 
-a_c = 3.2
-a_p = 4.6e-3
-m_c = 6.28
-m_p = 0.250
-g = 9.82
-l = 0.3325
-K_m = 93.4/1000
-R_m = 0.028
+a_c = 3.2 # friction coeficient
+a_p = 4.6e-3 # friction coeficient
+m_c = 6.28 #mass of cart
+m_p = 0.250 #mass of pendulum
+g = 9.82 #gravitational acceleration
+l = 0.3325 #length of pendulum
+K_m = 93.4/1000 #motor constant
+R_p = 0.028 # pulley radius
 
 # System matrices
 A_0 = np.array([[0.0, 1.0, 0.0, 0.0],
@@ -20,7 +20,7 @@ A_0 = np.array([[0.0, 1.0, 0.0, 0.0],
 
 B = np.array([[0.0], [1/m_c], [0.0], [1/(l*m_c)]])
 
-#_______________________________Simulering________________________#
+#_______________________________Simulation________________________#
 
 def ode1(S,K):
     u = -np.dot(K, S) 
@@ -53,7 +53,7 @@ def sim(IC, time, K):
         k3 = t_step * ode1(z + k2 / 2, K)
         k4 = t_step * ode1(z + k3, K)
 
-        I = np.append(I, np.dot(K,z)/((K_m)/R_m))
+        I = np.append(I, np.dot(K,z)/((K_m)/R_p))
         u = np.append(u, np.dot(K,z))
 
         z = z + (k1 + 2 * k2 + 2 * k3 + k4) / 6
@@ -79,9 +79,6 @@ Q = np.array([[5000, 0, 0, 0],
 R = np.array([0.1])
 
 K, S_1, E = ctrl.lqr(A_0, B, Q, R)
-
-#print(f"K-matrix: {K}")
-#print(f"Eigenvalues: {np.linalg.eigvals(A_0-np.dot(B,K))}")
 
 #________________________PLOTS__________________________________________#
 
